@@ -3,7 +3,7 @@ module OAuth2::Provider::Models::AccessToken
 
   included do
     include OAuth2::Provider::Models::TokenExpiry, OAuth2::Provider::Models::RandomToken
-    self.default_token_lifespan = 1.month
+    self.default_token_lifespan = 1.hour
 
     validates_presence_of :authorization, :access_token, :expires_at
     validate :expires_at_isnt_greater_than_authorization
